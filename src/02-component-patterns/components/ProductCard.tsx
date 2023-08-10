@@ -2,21 +2,26 @@
 import styles from '../styles/styles.module.css'
 
 import noImage from '../assets/no-image.jpg'
-import { useState } from 'react'
+import { useProduct } from '../hooks/useProduct'
 
-const ProductCard = () => {
 
-  const [counter, setCounter] = useState(0);
+interface IProps {
+  product: IProduct
+}
+interface IProduct {
+  id: string,
+  title: string,
+  img?: string
+}
 
-  const increaseBy = ( value:number ) => {
-    setCounter(prev => Math.max( prev + value, 0))
-  }
+const ProductCard = ({ product }: IProps) => {
+  const { counter, increaseBy } = useProduct()
   
   return (
     <div className={ styles.productCard }>
-      <img className={ styles.productImg } src="./coffee-mug.png" alt="Coffee Mug" />
+      <img className={ styles.productImg } src={product.img ? product.img : noImage} alt="Coffee Mug" />
       {/* <img className={ styles.productImg } src={noImage} alt="Coffee Mug" /> */}
-      <span className={styles.productDescription}>Coffee Mug</span>
+      <span className={styles.productDescription}>{ product.title }</span>
 
       <div className={styles.buttonsContainer}>
         <button onClick={()=>increaseBy(-1)} className={styles.buttonMinus}> - </button>
