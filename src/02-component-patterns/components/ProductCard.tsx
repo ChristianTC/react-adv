@@ -5,9 +5,6 @@ import { useProduct } from '../hooks/useProduct'
 import { createContext } from 'react'
 import { IProductContextProps, IProductCardProps } from '../interfaces/interfaces';
 
-
-
-
 export const ProductContext = createContext({} as IProductContextProps);
 const { Provider } = ProductContext;
 
@@ -30,9 +27,5 @@ const ProductCard = ({ children, product }: IProductCardProps) => {
     </Provider>
   )
 }
-
-ProductCard.Image = ProductImage
-ProductCard.Title = ProductTitle
-ProductCard.Buttons = ProductButtons
 
 export {ProductCard}
