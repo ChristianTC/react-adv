@@ -28,8 +28,8 @@ const ShoppingPage = () => {
           product={ product }
           className={"bg-dark"}
         >
-          <ProductImage />
-          <ProductTitle title={'Cafe'} />
+          <ProductImage className={'custom-image'}/>
+          <ProductTitle title={'Cafe'} className={'text-white text-bold'} />
           <ProductButtons />
         </ProductCard>
       </div>
