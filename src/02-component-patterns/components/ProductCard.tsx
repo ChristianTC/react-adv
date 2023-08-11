@@ -12,9 +12,10 @@ export interface IProps {
   product: IProduct,
   children?: ReactElement | ReactElement[],
   className?: string
+  style?: React.CSSProperties
 }
 
-const ProductCard = ({ children, product, className }: IProps) => {
+const ProductCard = ({ children, product, className, style }: IProps) => {
   const { counter, increaseBy } = useProduct()
   
   return (
@@ -23,7 +24,7 @@ const ProductCard = ({ children, product, className }: IProps) => {
       increaseBy,
       product
     }}>
-      <div className={ `${styles.productCard} ${className}` }>
+      <div className={ `${styles.productCard} ${className}` } style={style}>
         { children }
         {/* <ProductImage img={product.img} />
         <ProductTitle title={product.title} />

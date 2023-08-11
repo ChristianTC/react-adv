@@ -6,9 +6,10 @@ import styles from '../styles/styles.module.css'
 export interface IProps {
   img?: string,
   className?: string,
+  style?: React.CSSProperties,
 }
 
-export const ProductImage = ({img, className}: IProps) => {
+export const ProductImage = ({img, className, style}: IProps) => {
   const { product } = useContext(ProductContext);
   let imgToShow: string
   if (img) {
@@ -20,6 +21,6 @@ export const ProductImage = ({img, className}: IProps) => {
   }
 
   return (
-    <img className={ `${styles.productImg} ${className}` } src={imgToShow} alt="Coffee Mug" />
+    <img className={ `${styles.productImg} ${className}` } src={imgToShow} alt="Coffee Mug" style={style} />
   )
 }
