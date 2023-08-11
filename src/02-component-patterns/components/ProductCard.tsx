@@ -57,4 +57,8 @@ const ProductCard = ({ children, product }: IProps) => {
   )
 }
 
-export default ProductCard
+ProductCard.Image = ProductImage
+ProductCard.Title = ProductTitle
+ProductCard.Buttons = ProductButtons
+
+export {ProductCard}
