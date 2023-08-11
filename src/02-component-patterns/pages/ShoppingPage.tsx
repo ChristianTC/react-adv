@@ -19,8 +19,8 @@ const ShoppingPage = () => {
         flexWrap: 'wrap',
       }}>
         <ProductCard product={ product }>
-          <ProductCard.Image />
-          <ProductCard.Title />
+          <ProductCard.Image className={'custom-image'} />
+          <ProductCard.Title className={'text-bold'} />
           <ProductCard.Buttons />
         </ProductCard>
 
